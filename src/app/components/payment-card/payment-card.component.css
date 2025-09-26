@@ -1,0 +1,11 @@
+.payment-method img {
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  width: 40px; /* taille de base */
+}
+
+.payment-method img:hover {
+  transform: scale(1.2); /* agrandit la carte */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* ajoute un effet de profondeur */
+  z-index: 10; /* pour que la carte soit au-dessus des autres */
+}

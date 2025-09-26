@@ -1,0 +1,32 @@
+
+<app-page-title title="Products"></app-page-title>
+
+<div class="product-container flex content">
+
+<div class="products-category">
+    <ul class="unlisted">
+        <li *ngFor="let category of categories">
+        <a href="#"
+        [ngClass]="{'active':category.slug === currentCategory?.slug}"
+        (click)="handleClick($event, category)">{{ category.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="products-list flex-1  flex wrap  gap-10">
+ <!-- <app-product-item
+ *ngFor="let product of products"
+ [product]="product">
+ </app-product-item> -->
+<app-product-list
+[products]="products"
+[isLoading]="isLoading"
+>
+</app-product-list>
+
+  </div>
+</div>
+
+
+

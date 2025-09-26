@@ -1,0 +1,352 @@
+/*
+
+.single-product .single-product-image   {
+
+justify-content: flex-end;
+
+
+}
+
+.single-product .single-product-image-current {
+width:400px ;
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 95%;
+
+}
+
+.single-product {
+
+margin-bottom: 20px;
+margin-top: 20px;
+margin-top: 130px;
+
+}
+.single-product-details .modul-product-view-details-price {
+ margin-left: 2rem;
+}
+
+
+.product-action-button{
+  margin-left: 2rem;
+}
+.modal-product-view-created_at{
+  margin-left: 2rem;
+}
+
+.single-product-details h1{
+  color: rgb(47, 47, 47);
+margin-left: 2rem;
+  font-family:SweetSansProThinItalic;
+}
+
+.single-product-details .modul-product-view-details-price h4{
+font-size: 2rem;
+font-family:SweetSansProThinItalic;
+color:#f7941d ;
+}
+
+.single-product-details .modul-product-view-details-price del{
+font-size: 1rem;
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+.single-product {flex-direction: column-reverse;}
+
+.single-product .single-product-image{
+
+justify-content: center;
+}
+
+
+
+
+
+
+}
+
+@media screen and (max-width: 450px) {
+
+
+.single-product .single-product-image img{
+
+width: 100%;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.single-product img.imgsmall.current{
+  cursor:pointer ;
+border: 5px solid  #335139;
+ transform: scale(1.05);
+}
+
+/**** */
+.single-product-image-list {
+  max-height: 420px;     /* limite la hauteur */
+  overflow-y: auto;      /* active le scroll vertical si ça dépasse */
+  padding: 7px;    /* espace pour la scrollbar */
+
+}
+
+/* .single-product-image-current img {
+  transition: transform 0.4s ease-in-out;
+  cursor: zoom-in;
+   z-index: 1;
+
+} */
+
+/* .single-product-image-current img:hover {
+  transform: scale(1.1);
+  cursor: zoom-out;
+   z-index: 9999;
+} */
+
+
+
+
+
+
+/* Container global */
+.single-product {
+  display: flex;
+
+  margin:150px 0 20px;
+  align-items: flex-start;
+
+}
+
+/* Bloc image courante + miniatures */
+.single-product-image-current {
+  /* display: flex;
+gap: 1rem;
+  max-width: 1200px;
+  width: 100%; */
+
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+   /* espace entre image et détails */
+  max-width: 1200px;
+  width: 100%;
+
+padding-left: 19%;
+
+
+}
+
+/* Image principale */
+/* .current-image {
+  transition: transform 0.4s ease-in-out;
+  cursor: zoom-in;
+  z-index: 1;
+
+} */
+
+
+.current-image:hover {
+  transform: scale(1.3);
+  cursor: zoom-out;
+  z-index: 1;
+}
+
+
+
+.single-product-details h1 {
+  color: #2f2f2f;
+  font-family: SweetSansProThinItalic;
+  margin-bottom: 1rem;
+}
+
+.single-product-details .modul-product-view-details-price h4 {
+  font-size: 2rem;
+  font-family: SweetSansProThinItalic;
+  color: #f7941d;
+}
+
+.single-product-details .modul-product-view-details-price del {
+  font-size: 1rem;
+  color: #999;
+}
+
+.modal-product-view-created_at,
+.product-action-button {
+  margin-top: 1rem;
+
+}
+
+
+
+
+/* Miniatures */
+.single-product img.imgsmall {
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: transform 0.3s, border 0.3s;
+
+}
+
+.single-product img.imgsmall.current {
+  border: 3px solid #335139;
+  transform: scale(1.05);
+
+}
+
+/* ======================= */
+/* 📱 Responsive mobile */
+/* ======================= */
+
+@media screen and (max-width: 900px) {
+  .single-product {
+    flex-direction: column; /* Image au-dessus, détails en dessous */
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .single-product-image-current {
+    flex-direction: column;
+    align-items: center;
+margin-right: 40px;
+
+  }
+
+  .current-image {
+    width: 100%; /* image prend la largeur dispo */
+    max-width: 450px; /* mais reste raisonnable */
+    height: auto;
+ margin: 0 auto;
+
+  }
+
+  .single-product-details {
+    width: 100%;
+    padding-right: 10px;
+     /* espace entre image et détails */
+
+  }
+
+
+
+
+
+
+}
+
+@media screen and (max-width: 450px) {
+  .current-image {
+    max-width: 100%;
+  }
+}
+
+.product-action-button {
+  display: flex;
+  flex-direction: column;   /* aligne en colonne */
+  align-items: center;      /* centre horizontalement */
+  justify-content: center;  /* centre verticalement */
+  gap: 1rem;                /* espace entre le bouton et la carte */
+
+}
+
+.product-action-button {
+    display: flex;               /* active Flexbox */
+    justify-content: center;     /* centre horizontalement */
+    align-items: center;         /* centre verticalement */
+    gap: 6px;                    /* espace entre l’icône et le texte */
+    padding: 8px 24px;          /* padding confortable */
+    background-color: #335139;   /* vert moderne pour le bouton */
+    color: #fff;                 /* texte blanc */
+    font-size: 16px;
+    font-weight: 600;
+    border: none;                /* supprime la bordure par défaut */
+    border-radius: 6px;          /* coins arrondis */
+    cursor: pointer;             /* pointeur souris */
+    transition: background 0.3s, transform 0.2s;
+}
+
+.product-action-button:hover {
+    background-color: #154b20;   /* couleur au survol */
+
+}
+
+.product-action-button:active {
+    transform: scale(0.98);      /* effet clic */
+}
+
+.product-action-button .icon {
+    font-size: 18px;             /* taille de l’icône */
+}
+
+
+.modul-product-view-details-price {
+  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modul-product-view-details-price del {
+  color: #999;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+
+
+
+
+.modul-product-view-details-price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Arial', sans-serif;
+}
+
+.sold-price {
+  color: #333;           /* gris foncé pour le prix principal */
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.discount-badge {
+  background-color: #e0e0e0;  /* gris clair pour le badge */
+  color: #555;                 /* gris moyen pour le texte */
+  font-size: 14px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+
+
+.discount-percentage {
+  background-color: #f0f0f0 !important       ;   /* gris clair pour le badge */
+  color: #555 !important  ;                 /* texte gris moyen */
+            /* texte en gras */
+  font-size: 2px;
+  padding: 2px 6px;           /* padding confortable */
+  border-radius: 4px;          /* coins arrondis */
+  display: inline-block;       /* pour ressembler à un badge */
+}
+
+

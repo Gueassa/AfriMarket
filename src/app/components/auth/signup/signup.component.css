@@ -1,0 +1,204 @@
+
+.signup {
+height: 70vh;
+
+}
+
+
+
+.btn{
+font-size:1.4rem;
+height:40px;
+background-color: #1d1d1d;
+border: none;
+min-width: 100px;
+color: white;
+cursor: pointer;
+font-weight: bold;
+
+}
+.form-container{
+width: 600px;
+position: relative;
+top:50%;
+left:50%;
+border: 0.1px solid #ccc;
+transform:translate(-50%,-50%);
+margin-bottom: 5%;
+ box-shadow: 0 3px 5px  -1px rgba(67, 66, 66, 0.2), 0  6px 10px  #95939324, 0 1px 18px  #0000001f;
+}
+form{
+border: 0.1px solid #ccc;
+padding: 5px;
+
+}
+
+form .form-line{
+  min-height: 40px;
+  padding:10px 0;
+  gap: 10px;
+}
+
+form .form-line input{
+font-size: 1.1rem;
+height: 40px;
+}
+
+@media screen and ( max-width:550px){
+.form-container{
+width: 90%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== Conteneur du formulaire ====== */
+.form-container {
+  background: #325038; /* vert principal, comme le menu */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 700px;
+  padding: 3px;
+  font-family: "Sweet Sans Pro", sans-serif;
+  color: #fff;
+}
+.signup {
+  margin-top: 8%;
+  justify-content: center; /* centre horizontal */
+  align-items: center;     /* centre vertical (si tu veux au milieu de la page) */
+  min-height: 100vh;       /* prend toute la hauteur de l’écran */
+
+}
+
+/* ====== Titre ====== */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ====== Texte secondaire ====== */
+.form-container p.tc {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.form-container p.tc a {
+  color: #f07f1a;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-container p.tc a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Champs ====== */
+.form-line {
+  margin-bottom: 16px;
+}
+
+.form-line input {
+  width: 100%;
+padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+/* Effet focus */
+.form-line input:focus {
+  border: 2px solid #f07f1a;
+  box-shadow: 0 0 6px rgba(240, 127, 26, 0.4);
+}
+
+/* ====== Messages d’erreur ====== */
+.error p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #ffdddd;
+  font-weight: 500;
+}
+
+/* ====== Bouton ====== */
+.button .btn {
+  background: #f07f1a; /* orange principal */
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.button .btn:hover:enabled {
+  background: #e07010;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(240, 127, 26, 0.4);
+}
+
+.button .btn:disabled {
+  background: #777;
+  cursor: not-allowed;
+}
+
+
+
+
+
+@media screen and (max-width: 550px) {
+  .signup {
+    margin-top: 38%;         /* un peu plus bas pour ne pas coller au haut */
+    min-height: auto;        /* évite les espaces vides trop grands */
+            /* réduit les marges latérales */
+    width: 100%;
+
+  }
+
+  .form-container {
+    width: 87%;             /* prend toute la largeur dispo */
+    max-width: 90%;          /* limite un peu pour respirer */
+    padding: 30px;           /* un peu plus de padding pour aérer */
+    border-radius: 8px;      /* angles arrondis plus doux */
+
+  }
+
+  .form-container h2 {
+    font-size: 18px;         /* titre un peu plus petit */
+    margin-bottom: 12px;
+  }
+
+  .form-line input {
+    font-size: 16px;         /* taille confortable pour mobile */
+    height: 45px;            /* hauteur adaptée aux doigts */
+  }
+
+  .button .btn {
+    font-size: 16px;         /* bouton plus lisible */
+    padding: 30px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+}

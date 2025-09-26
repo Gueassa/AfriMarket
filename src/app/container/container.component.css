@@ -1,0 +1,43 @@
+.container{
+
+  min-height:70vh;
+
+  }
+.container {
+  margin-top: 5px; /* hauteur de la toolbar Material */
+}
+
+.contenu{
+ font-family:  Sweet Sans Pro;
+ color: rgb(58, 58, 58);
+}
+
+
+
+
+
+.title-bg {
+  display: inline-block; /* pour que ça s’ajuste autour du contenu */
+  padding: 10px 20px;   /* ↑↓ = 30px, ←→ = 100px */
+  background-color: #f7941d;
+  border-radius: 90%;   /* arrondi horizontal */
+  margin: 16px auto;     /* centré horizontalement */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family:  Sweet Sans Pro;
+}
+
+.title-bg h1 {
+  font-size: 1.5rem;   /* agrandir le texte */
+  color: white;
+  margin: 0;           /* enlever le margin par défaut du h1 */
+}
+
+
+
+
+
+
+
+

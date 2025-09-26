@@ -1,0 +1,13 @@
+
+<div class="aside-nav mobile-">
+
+
+     <ul class="unlisted">
+
+            <li *ngFor="let item of navs_data"><a (click)="handleClose()"[routerLink]="item?.path">{{item?.name}}</a></li>
+
+            <li *ngFor="let item of auths_data"><a (click)="handleClose()" [routerLink]="item?.path" class="btn">{{item?.name}}</a></li>
+
+     </ul>
+
+</div>

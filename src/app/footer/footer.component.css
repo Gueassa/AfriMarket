@@ -1,0 +1,94 @@
+.footer-bottom{
+background-color: #335139 ;
+height: 17vh;
+
+display: flex;
+  justify-content: center; /* centre horizontalement */
+  align-items: center;     /* centre verticalement si besoin */
+  flex-direction: column;  /* garde le contenu en colonne */
+
+
+
+}
+
+
+
+
+
+/* Structure principale */
+.footer-content {
+  background-color: #000;
+  color: white;
+  padding: 40px 10px;
+  font-family:  Sweet Sans Pro;
+
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Colonnes */
+.footer-twidget {
+  flex: 1 1 200px;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Titres */
+.widget-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 17px;
+  color: #fff;
+  border-left: 1px solid #f7941d;
+  padding-left: 10px;
+}
+
+/* Liens */
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+
+.footer-list li {
+  margin-bottom: 10px;
+}
+
+.footer-list a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family:Sweet Sans Pro ;
+}
+
+.footer-list a:hover {
+  color: #f7941d; /* ✅ ajouté pour un hover moderne */
+  text-decoration: underline;
+}
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-twidget {
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .footer-list {
+    text-align: center;
+  }
+}
+
+
+
+

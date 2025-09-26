@@ -1,0 +1,122 @@
+.product-list{
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 5%;
+  }
+
+  @media screen and (max-width:450px){
+    .product-item{width:100%}
+  }
+
+
+
+/* Container général */
+.ngx-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-family:  Sweet Sans Pro;
+}
+
+/* Boutons pages */
+.ngx-pagination a {
+  padding: 8px 14px;
+  min-width: 36px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Hover orange */
+.ngx-pagination a:hover {
+  background-color: #ccc !important;
+  color: white !important;
+  border-color: #ccc !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Page active */
+.ngx-pagination .current {
+  background-color: #335139 !important;
+  color: white !important;
+  border-color: #335139 !important;
+  pointer-events: none; /* empêche le clic */
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Supprimer tout contour ou focus bleu */
+.ngx-pagination a:focus,
+.ngx-pagination a:active,
+.ngx-pagination .current:focus,
+.ngx-pagination .current:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Boutons Précédent / Suivant */
+.ngx-pagination .prev,
+.ngx-pagination .next {
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ngx-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* ✅ Centre horizontalement */
+    align-items: center;     /* ✅ Centre verticalement si besoin */
+    gap: 4px;
+    margin: 0 auto;          /* ✅ Centrage en cas d’élément inline-block ou largeur fixe */
+  }
+
+  .ngx-pagination a,
+  .ngx-pagination .current,
+  .ngx-pagination .prev,
+  .ngx-pagination .next {
+    padding: 4px 6px;
+    min-width: 30px;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .ngx-pagination .current {
+    background-color: #2d4b3d;
+    color: white;
+    border-radius: 4px;
+  }
+
+  .ngx-pagination a,
+  .ngx-pagination .prev,
+  .ngx-pagination .next {
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 4px;
+  }
+
+  .ngx-pagination .small-screen-hidden {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+

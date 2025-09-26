@@ -1,0 +1,47 @@
+
+<div class="product-list" >
+  <app-loading *ngIf="isloading"></app-loading>
+
+
+  <!-- <app-product-item  *ngFor="let product of products"
+  [product]="product" (deleteProductItem)="handleDeleteProduct($event)"
+  (handleDisplayProductViewModal)="handleDisplayProductViewModal($event)">
+  </app-product-item> -->
+
+
+
+
+<app-product-item
+  *ngFor="let product of products | paginate: { itemsPerPage: pageSize, currentPage: page }"
+  [product]="product"
+  (quickView)="handleDisplayProductViewModal($event)">
+</app-product-item>
+
+
+
+
+
+
+
+  <div class="bar" *ngIf="!isloading && !products.length">Désoler aucun article n'est disponible pour le moment</div>
+
+
+  <pagination-controls
+    *ngIf="products.length > pageSize"
+    (pageChange)="page = $event"
+    previousLabel="Précédent"
+    nextLabel="Suivant">
+  </pagination-controls>
+
+
+  <app-modal-product-view *ngIf="isDisplayModal && modalProduct"
+  [product]="modalProduct"  (close)="handleCloseModal()"        ></app-modal-product-view>
+
+
+
+
+  </div>
+
+
+
+

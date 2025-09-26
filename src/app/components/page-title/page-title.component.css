@@ -1,0 +1,25 @@
+.page-title{
+background-color: #ccc;
+align-items: center;
+justify-content: center;
+min-height: 20vh;
+display: flex;
+margin-top: 7%;
+font-family: sweet sans pro;
+}
+
+@media screen and  (max-width: 1200px) {
+
+.page-title{
+background-color: #ccc;
+align-items: center;
+justify-content: center;
+min-height: 10vh;
+display: flex;
+margin-top: 25%;
+font-family: sweet sans pro;
+}
+
+
+
+}

@@ -1,0 +1,175 @@
+
+.product-container {
+  min-height: calc(100vh - 100px); /* 100px = hauteur approximative de ton header */
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8%;
+}
+
+
+
+
+.products-category{
+  min-width: 30vh;
+
+}
+
+.product-container ul li a{
+display:block;
+height: 50px;
+background-color: #ccc;
+margin-bottom: 5px;
+line-height:50px ;
+font-weight:bold ;
+padding: 0 10px;
+border-radius: 10px;
+text-decoration: none;
+cursor: pointer;
+color: rgb(50, 50, 50);
+}
+
+.product-container ul li a.active{
+background-color: #ca7c1c;
+color:white ;
+}
+
+
+
+
+/* decale le product category au container */
+.products-list {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 120px; /* décale les produits pour laisser la place à la sidebar */
+}
+
+
+.products-category ul li a {
+  display: block;
+  height: 50px;
+  background-color: #ccc;
+  margin-bottom: 5px;
+  line-height: 50px;
+  font-weight: bold;
+  padding: 0 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(50, 50, 50);
+
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.products-category ul li a:hover {
+  transform: scale(1.05);   /* l’élément s’agrandit */
+  background-color: #959494; /* couleur hover */
+  color: #fff;
+  z-index: 2; /* évite que ça soit masqué par un autre élément */
+}
+
+
+@media screen and (max-width: 1200px){
+
+.products-list{
+display: none;
+
+}
+
+.products-category ul li a {
+    display: inline-block;   /* ne prend pas toute la ligne */
+    min-width: 80px;         /* largeur minimale */
+    height: 35px;            /* plus petit en hauteur */
+    line-height: 35px;
+    font-size: 14px;         /* texte réduit */
+    padding: 0 8px;          /* moins de padding */
+  }
+
+
+
+}
+
+
+
+.product-container {
+  width: 100%;         /* prend toute la largeur */
+  max-width: 100%;    /* pas de limite */
+  display: flex;
+  box-sizing: border-box; /* inclut padding dans la largeur */
+
+}
+
+
+.products-category {
+  flex: 0 0 100px;     /* largeur fixe pour la sidebar */
+  min-width: 117px;
+  position: fixed;
+  margin-top: 22%;
+
+
+}
+.products-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.products-category li a {
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+  color: #333;
+}
+
+.products-list {
+  flex: 1;             /* prend tout l’espace restant */
+  display: flex;
+  flex-wrap: wrap;     /* les cartes passent à la ligne si besoin */
+  gap: 10px;
+}
+
+.products-list app-product-item {
+  flex: 0 0 calc(33.33% - 10px); /* 3 cartes par ligne */
+  max-width: 250px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 8px;
+  padding: 27px;
+
+}
+
+
+
+
+.products-category {
+  min-width: 150px;        /* largeur de la colonne */
+ max-height: 370px;            /* fixe une hauteur pour voir le scroll */
+  overflow-y: scroll;      /* force toujours la barre de défilement */
+  overflow-x: hidden;      /* évite une barre horizontale */
+  scrollbar-width: thin;   /* Firefox */
+  scrollbar-color: #ca7c1c #f1f1f1;
+  padding: 15px;
+}
+
+/* Chrome / Edge / Safari */
+.products-category::-webkit-scrollbar {
+  width: 4px;
+  height: 30px;
+}
+
+.products-category::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.products-category::-webkit-scrollbar-thumb {
+  background-color: #ca7c1c;
+  border-radius: 10px;
+}
+
+
+
+
+

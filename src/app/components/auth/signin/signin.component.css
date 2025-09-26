@@ -1,0 +1,165 @@
+.signin {
+margin-top: 10%;
+
+}
+
+button:disabled{
+cursor: not-allowed;
+opacity:0.5;
+
+}
+
+.error{
+color: red;
+}
+
+
+
+
+/* ====== Conteneur du formulaire ====== */
+.form-container {
+  background: #325038; /* vert principal, comme le menu */
+
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 500px;
+
+  font-family: "Sweet Sans Pro", sans-serif;
+  color: #fff;
+}
+.signin {
+  margin-top: 27%;
+  justify-content: center; /* centre horizontal */
+  align-items: center;     /* centre vertical (si tu veux au milieu de la page) */
+  min-height: 50vh;       /* prend toute la hauteur de l’écran */
+padding: 15px;
+}
+
+/* ====== Titre ====== */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ====== Texte secondaire ====== */
+.form-container p.tc {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.form-container p.tc a {
+  color: #f07f1a;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-container p.tc a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Champs ====== */
+.form-line {
+  margin-bottom: 16px;
+}
+
+.form-line input {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+/* Effet focus */
+.form-line input:focus {
+  border: 2px solid #f07f1a;
+  box-shadow: 0 0 6px rgba(240, 127, 26, 0.4);
+}
+
+/* ====== Messages d’erreur ====== */
+.error p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #ffdddd;
+  font-weight: 500;
+}
+
+/* ====== Bouton ====== */
+.button .btn {
+  background: #f07f1a; /* orange principal */
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.button .btn:hover:enabled {
+  background: #e07010;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(240, 127, 26, 0.4);
+}
+
+.button .btn:disabled {
+  background: #777;
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+  .signin {
+    place-items: start;              /* align en haut pour laisser défiler */
+    padding-top: 25vh;                /* espace en haut pour respirer */
+    min-height: calc(100vh - 20px);  /* éviter débordements */
+    max-width: 100%;
+    justify-content: center;
+
+  }
+  .form-container {
+
+    padding: 15px;
+  }
+  .form-container h2 {
+    font-size: 18px;         /* réduit le titre pour mobile */
+    margin-bottom: 15px;
+  }
+
+  .form-container p.tc {
+    font-size: 13px;         /* texte secondaire un peu plus petit */
+    margin-bottom: 15px;
+  }
+
+  .form-line input {
+    font-size: 16px;         /* confortable pour mobile */
+    height: 45px;            /* adapté aux doigts */
+  }
+
+  .button .btn {
+    font-size: 16px;
+    padding: 25px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+

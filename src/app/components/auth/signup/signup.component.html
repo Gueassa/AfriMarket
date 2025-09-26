@@ -1,0 +1,34 @@
+<div class="signup">
+<div class="form-container">
+<form action="">
+  <h2>Inscription</h2>
+  <p class="tc">Vous avez déjà un compte ? Si oui, cliquez ici <a routerLink="/signin" >se connecter</a></p>
+  <div class="form-line flex  gap-10 wrap">
+  <input class="flex-1" type="text" name="firstname" placeholder="your firstname..." [(ngModel)]="user.firstname"    />
+  <input class="flex-1" type="text" name="lastname" placeholder="your lastname..."   [(ngModel)]="user.lastname"        />
+  </div>
+
+<div class="form-line flex">
+<input class="flex-1" type="email" name="email" placeholder="your email please..." [(ngModel)]="user.email"     />
+   </div>
+
+
+   <div class="form-line flex">
+<input class="flex-1" type="password" name="password" placeholder="your password please..." [(ngModel)]="user.password"   />
+   </div>
+<div class="form-line flex">
+<input class="flex-1" type="password" name="passwordConfirm" placeholder="Confirm your password please..." [(ngModel)]="user.passwordConfirm" />
+
+</div>
+
+<div class="button flex">
+<button class="btn flex-1" (click)="handleSubmit()"   >S'inscrire</button>
+
+</div>
+<!-- <p>{{user|json}}</p> -->
+</form>
+
+</div>
+
+
+

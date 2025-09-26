@@ -1,0 +1,38 @@
+<div class="signin">
+<div class="form-container">
+<form action="" [formGroup]="signinForm">
+<h2>Connexion</h2>
+<p class="tc">Vous n’avez pas de compte ? Si oui, cliquez ici <a routerLink="/signup">s'enregistrer</a></p>
+<div class="form-line flex">
+<input class="flex-1" type="email" [formControl]="email" name="email" placeholder="your email please..."    />
+
+</div>
+<div class="error" *ngIf="email.dirty && !email.valid">
+  <p *ngIf="email.hasError('required')"> L'email est requis! </p>
+  <p *ngIf="!email.hasError('required')"> L'email ne respect pas le bon format </p>
+  </div>
+
+   <div class="form-line flex">
+<input class="flex-1" type="password" [formControl]="password" name="password" placeholder="your password please..."    />
+   </div>
+
+<div class="error" *ngIf="password.dirty && !password.valid">
+  <p *ngIf="password.hasError('minlength')"> The password must be at least 6 charcartères  </p>
+
+  </div>
+
+
+
+
+<div class="button flex">
+<button class="btn flex-1" [disabled]="!this.signinForm.valid" (click)="handleSubmit()"   >Se connecter</button>
+
+</div>
+<!-- <p>{{user|json}}</p> -->
+
+
+</form>
+
+</div>
+
+

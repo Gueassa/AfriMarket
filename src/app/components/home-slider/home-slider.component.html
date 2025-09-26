@@ -1,0 +1,66 @@
+
+<div class="slider ">
+<div class="slide-item"
+  [ngStyle]="{'background-image':'url('+slider[currentIndex].imageUrl+')'}">
+
+<img (click)="handleChange(-1)" src="/assets/images/icons/previous-white.png" alt="" class="previous"width="30px" height="30px">
+
+
+<!-- <div class="slide-text">
+      <h3>{{ currentSlide.description }}</h3>
+
+    </div> -->
+
+<div class="blob-container">
+  <svg class="blob-svg" viewBox="5 5 800 700" preserveAspectRatio="xMidYMid slice">
+    <path class="blob-path"
+      d="M1094.6,387.4C1094.6,508.6,974.6,604.6,864.6,633.6C754.6,662.6,653.6,621.6,536.6,617.6C419.6,613.6,269.6,645.6,170.6,596.6C71.6,547.6,57.6,416.6,113.6,323.6C169.6,230.6,320.6,172.6,431.6,141.6C542.6,110.6,709.6,92.6,824.6,141.6C939.6,190.6,1094.6,266.6,1094.6,387.4Z">
+    </path>
+  </svg>
+
+  <div class="slide-text">
+    <h3>{{ currentSlide.description }}</h3>
+  </div>
+</div>
+
+
+
+<img (click)="handleChange(1)" src="/assets/images/icons/next-white.png" alt="" class="previous" width="30px" height="30px"   >
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

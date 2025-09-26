@@ -1,0 +1,22 @@
+<div class="modal-product-view">
+  <div class="overlay"> </div>
+  <div class="modal-product-view-container flex ">
+
+<div class="modal-product-view-image flex-1">
+      <!-- Spinner pendant le chargement -->
+      <app-loading *ngIf="isImageLoading"></app-loading>
+
+      <img
+        [src]="product ? product.imageUrl[0] : ''"
+        [alt]="product?.name"
+        height="300px"
+        width="220px"
+        (load)="onImageLoad()" />
+    </div>
+
+<div class="modal-product-view-details flex-1 aic jcc column  "> <h3>{{product?.name}}</h3>
+  <div class="modul-product-view-details-price">  <h4>{{(product?.sold_price || 0)/100  | currency:"EUR"}} <del>{{(product?.regular_price ||0) /100   | currency:"EUR"   }}</del> </h4>  </div>
+  <div class="modal-product-view-created_at">créer le {{product?.created_at|date:"dd/MM/YYY"}}</div>
+  <button class="btn btn-close " (click)="closeModal()"  >fermer</button>
+</div>
+</div>

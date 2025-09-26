@@ -1,0 +1,104 @@
+.aside-nav{
+  position:fixed;
+  background-color: #ca7c1c;
+  color: white;
+  width: 300px;
+  height: 100vh;
+}
+.aside-nav.mobile- {
+  font-family: "Sweet Sans Pro", sans-serif;
+}
+
+/* Menu latéral fixé sous le header */
+.aside-nav.mobile- {
+  position: fixed;
+  top: 100px; /* ajuste à la hauteur de ton header */
+  left: 0;
+  width: 265px; /* un peu plus étroit */
+  background: #325038; /* vert principal */
+  border-radius: 0 10px 10px 0;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  padding: 12px 0;
+  animation: slideIn 0.5s ease forwards;
+  z-index: 900;
+  height: calc(100% - 70px); /* occupe le reste de la page */
+  overflow-y: auto; /* scroll si beaucoup de liens */
+}
+
+/* Liste des liens */
+.aside-nav.mobile- ul.unlisted {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Style des liens */
+.aside-nav.mobile- ul.unlisted li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+}
+
+/* Icône */
+.aside-nav.mobile- ul.unlisted li a i {
+  font-size: 16px;
+  color: #f07f1a; /* orange principal */
+  transition: transform 0.3s ease;
+}
+
+/* Effet hover */
+.aside-nav.mobile- ul.unlisted li a:hover {
+  background: rgba(240, 127, 26, 0.2); /* orange transparent */
+  transform: translateX(4px);
+}
+
+.aside-nav.mobile- ul.unlisted li a:hover i {
+  transform: scale(1.15);
+}
+
+/* Boutons spéciaux (auths_data) */
+.aside-nav.mobile- ul.unlisted li a.btn {
+  background: #f07f1a; /* orange principal */
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  border-radius: 6px; /* coins légèrement arrondis */
+  padding: 3px 3px; /* taille compacte */
+  font-size: 14px;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+ align-items: center;        /* ✅ centre vertical */
+justify-content: center;    /* ✅ centre horizontal */
+display: flex;
+
+}
+
+.aside-nav.mobile- ul.unlisted li a.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(240, 127, 26, 0.5);
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
