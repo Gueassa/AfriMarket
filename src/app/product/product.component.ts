@@ -247,13 +247,19 @@ throw new Error('Method not implemented.');
 ajouterAuxFavoris() {
   if (this.product) {
     this.favorisService.ajouterFavoris(this.product);
-    alert(`${this.product.name} a été ajouté aux favoris !`);
+    this.showToast(`${this.product.name} a été ajouté au panier ✅`);
   }
 }
 
-// Vérifier si le produit est déjà favori
-estFavoris(): boolean {
-  return this.product ? this.favorisService.isFavoris(this.product) : false;
+showToast(message: string) {
+  const toast = document.getElementById('toast')!;
+  toast.textContent = message;
+  toast.className = 'toast show';
+  setTimeout(() => {
+    toast.className = 'toast';
+  }, 3000);
+
+}
 }
 
 
@@ -265,5 +271,12 @@ estFavoris(): boolean {
 
 
 
-}
+
+
+
+
+
+
+
+
 

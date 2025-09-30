@@ -20,6 +20,7 @@ export class ProductItemComponent implements OnInit {
 @Output() quickView = new EventEmitter<Product>();
 
 
+
 constructor(private panierService: PanierService,
 
   private router: Router,
@@ -86,7 +87,6 @@ ajouterAuPanier(product?: Product, event?: MouseEvent) {
   this.panierService.ajouterProduit({ ...product, quantity: 1 });
   alert(`${product.name} a été ajouté au panier !`);
 
-
 }
 
 // pour ajouter au favoris//
@@ -96,18 +96,23 @@ ajouterAuxFavoris(product?: Product, event?: MouseEvent) {
   if (!product) return;
 
   this.favorisService.ajouterFavoris(product); // ajoute le produit aux favoris
-  alert(`${product.name} a été ajouté aux favoris !`);
+   this.showToast(`${product.name} a été ajouté au panier ✅`);
+}
+
+showToast(message: string) {
+  const toast = document.getElementById('toast')!;
+  toast.textContent = message;
+  toast.className = 'toast show';
+  setTimeout(() => {
+    toast.className = 'toast';
+  }, 3000);
 
 
 }
 
 
 
-
-
-
 }
-
 
 
 

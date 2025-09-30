@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
 import { FavorisService } from '../../services/favoris.service';
 import { CommonModule } from '@angular/common';
+import { PanierService } from '../../services/panier.service';
+
+
 @Component({
   selector: 'app-favoris',
   imports: [CommonModule],
@@ -13,13 +16,15 @@ import { CommonModule } from '@angular/common';
 
 
 export class FavorisComponent implements OnInit {
-ajouterAuPanier() {
-throw new Error('Method not implemented.');
-}
+
+
 
   favoris: Product[] = [];
 
-  constructor(private favorisService: FavorisService) {}
+
+  constructor(private favorisService: FavorisService,
+    private panierService: PanierService
+  ) {}
 
   ngOnInit(): void {
     this.favoris = this.favorisService.getFavoris();
@@ -34,4 +39,23 @@ throw new Error('Method not implemented.');
     this.favorisService.clear();
     this.favoris = [];
   }
+
+
+ajouterAuPanier(product: Product) {
+    this.panierService.ajouterProduit({ ...product, quantity: 1 });
+    this.showToast(`${product.name} a été ajouté au panier ✅`);
+  }
+
+showToast(message: string) {
+  const toast = document.getElementById('toast')!;
+  toast.textContent = message;
+  toast.className = 'toast show';
+  setTimeout(() => {
+    toast.className = 'toast';
+  }, 3000);
+}
+
+
+
+
 }

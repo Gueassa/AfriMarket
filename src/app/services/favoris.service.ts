@@ -7,6 +7,7 @@ import { Product } from '../models/product';
 })
 export class FavorisService {
 
+
   private favoris: Product[] = [];
 
   constructor() {}
@@ -37,4 +38,11 @@ export class FavorisService {
   clear() {
     this.favoris = [];
   }
+
+
+estDansFavoris(product: Product): boolean {
+  return this.favoris.some(p => p._id === product._id);
+}
+
+
 }

@@ -1,36 +1,48 @@
 <div class="favoris-page">
   <h2>💖 Mes favoris</h2>
+<div id="toast" class="toast">Produit ajouté au panier ✅</div>
 
-  <!-- Message si aucun produit -->
-  <p *ngIf="favoris.length === 0" class="empty-message">
-    Aucun produit en favoris.
-  </p>
+  @if (favoris.length === 0) {
+    <p class="empty-message">Aucun produit en favoris.</p>
+  } @else {
+    <div class="favoris-list">
+      @for (product of favoris; track product._id) {
+        <div class="favori-card">
+          <!-- Bouton retirer (croix en haut à droite) -->
+          <button class="btn-close" (click)="retirer(product)">✖</button>
 
-  <!-- Liste des favoris -->
-  <div class="favoris-list" *ngIf="favoris.length > 0">
-    <div class="favori-card" *ngFor="let product of favoris">
-      <img
-        [src]="product.imageUrl[0]"
-        [alt]="product.name"
-        class="favori-img"
+          <img
+            [src]="product.imageUrl[0]"
+            [alt]="product.name"
+            class="favori-img"
+          />
 
-      />
+          <h3 class="favori-name">{{ product.name }}</h3>
+          <p class="favori-price">
+            {{ (product.sold_price || 0) / 100 | currency: 'EUR' }}
+          </p>
 
-      <h3 class="favori-name">{{ product.name }}</h3>
-      <p class="favori-price">{{ (product.sold_price || 0)/100 | currency:'EUR' }}</p>
-
-      <div class="favori-actions">
-        <button class="btn-remove" (click)="retirer(product)">❌ Retirer</button>
-        <button class="btn"(click)="ajouterAuPanier()"> <img src="/assets/images/icons/Panier.png" alt="Panier" width="24" height="24" /></button>
-      </div>
+          <div class="favori-actions">
+            <button class="btn-panier" (click)="ajouterAuPanier(product)">
+              <img
+                src="/assets/images/icons/Panier.png"
+                alt="Panier"
+                width="18"
+                height="18"
+              />
+              Ajouter au panier
+            </button>
+          </div>
+        </div>
+      }
     </div>
-  </div>
 
-  <!-- Bouton vider tous -->
-  <button *ngIf="favoris.length > 0" class="btn-clear" (click)="clear()">
-    🗑️ Vider tous les favoris
-  </button>
+    <button class="btn-clear" (click)="clear()">
+      🗑️ Vider tous les favoris
+    </button>
+  }
 </div>
+
 
 
 
