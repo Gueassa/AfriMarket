@@ -8,7 +8,7 @@ height: 70vh;
 
 .btn{
 font-size:1.4rem;
-height:40px;
+height:50px;
 background-color: #1d1d1d;
 border: none;
 min-width: 100px;
@@ -18,9 +18,9 @@ font-weight: bold;
 
 }
 .form-container{
-width: 600px;
+width: 500px;
 position: relative;
-top:50%;
+top:40%;
 left:50%;
 border: 0.1px solid #ccc;
 transform:translate(-50%,-50%);
@@ -34,14 +34,14 @@ padding: 5px;
 }
 
 form .form-line{
-  min-height: 40px;
-  padding:10px 0;
-  gap: 10px;
+  min-height: 35px;
+  padding:5px 0;
+  gap: 6px;
 }
 
 form .form-line input{
 font-size: 1.1rem;
-height: 40px;
+height: 35px;
 }
 
 @media screen and ( max-width:550px){
@@ -64,11 +64,11 @@ width: 90%;
 /* ====== Conteneur du formulaire ====== */
 .form-container {
   background: #325038; /* vert principal, comme le menu */
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   width: 100%;
   max-width: 700px;
-  padding: 3px;
+
   font-family: "Sweet Sans Pro", sans-serif;
   color: #fff;
 }

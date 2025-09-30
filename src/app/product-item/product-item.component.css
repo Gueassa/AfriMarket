@@ -73,6 +73,7 @@ gap:2px ;
 justify-content: center;
 margin: 5px;
 flex-direction: column;
+
 }
 
 @media screen and (max-width: 450px) {
@@ -143,6 +144,7 @@ flex-direction: column;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   transition: visibility 0s, opacity 0.5s linear;
   opacity: 0;
+  font-family: sweet sans pro;
 }
 
 .toast.show {
