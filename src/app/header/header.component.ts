@@ -1,9 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Pipe, TemplateRef } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Subscription } from 'rxjs';
 import { environment } from '../environments/environment';
 import { auth_items, nav_items } from '../api/nav';
 import { Items } from '../models/item';
+
 
 @Component({
   selector: 'app-header',
@@ -13,13 +14,6 @@ import { Items } from '../models/item';
 
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-
-
-// cartItems: any;
-// goToCart() {
-// throw new Error('Method not implemented.');
-// }
-
 data:Number | undefined
 second:Number|undefined
 secondSub: Subscription| undefined
@@ -27,10 +21,15 @@ siteName: string = environment.siteName
 navs_data: Items[] = nav_items
 auths_data: Items[] = auth_items
 isDisplayMobileNav: boolean = false
+  panierService: any;
 
-
+ totalProduits: number = 0;
 
 constructor(private productService:ProductService){}
+
+nombreProduits: number = 0;//produit Quantité
+
+
   ngOnDestroy(): void {
    this.secondSub?.unsubscribe();
   }
@@ -47,7 +46,8 @@ constructor(private productService:ProductService){}
      }
 
   ngOnInit(): void {
-   this.productService.getNumber()
+
+  this.productService.getNumber()
    .subscribe(
    (value)=>{
    this.data = value
@@ -70,8 +70,16 @@ constructor(private productService:ProductService){}
    }
 
    )
-
    }
+
+
+
+
+
+
+
+
+
 
   }
 

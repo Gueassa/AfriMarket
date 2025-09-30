@@ -116,66 +116,13 @@ ngOnDestroy(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+applyFilter(): void {
+  const search = this.filter.toLowerCase().trim();
+  this.filteredProducts = this.products.filter(product =>
+    product.name.toLowerCase().includes(search) ||
+    (product.sold_price && product.sold_price.toString().includes(search))
+  );
+}
 
 
 

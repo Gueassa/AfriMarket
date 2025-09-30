@@ -120,3 +120,26 @@
 
 
 
+.search-bar {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.search-bar input {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none; /* enlève le bleu par défaut */
+}
+
+/* ✅ Seulement quand l'input est sélectionné */
+.search-bar input:focus {
+  border-color: orange;
+
+}
+
+
+

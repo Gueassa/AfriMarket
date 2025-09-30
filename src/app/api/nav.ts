@@ -5,12 +5,12 @@ export const nav_items : Items[] =
 
 [
   {
-    name: "Home",
+    name: "Accueil",
     path: "",
 
   },
    {
-    name:"Products",
+    name:"Nos produits",
     path:"products",
   },
    {
@@ -22,10 +22,21 @@ export const nav_items : Items[] =
     name:"Contact",
      path:"/Contact",
   },
-{
-    name:"Vos favoris",
+
+ {
+    name:"Mes favoris",
      path:"/favoris",
   },
+
+
+
+
+{
+    name:"",
+     path:"/panier",
+
+  },
+
 
 ]
 

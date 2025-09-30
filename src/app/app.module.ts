@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -28,7 +27,59 @@ import { ProductsContainerComponent } from './components/products-container/prod
 import { AsideNavComponent } from './components/aside-nav/aside-nav.component';
 import { PageTitleComponent } from './components/page-title/page-title.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PanierComponent } from './components/panier/panier.component';
+import { CommonModule } from '@angular/common';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FavorisComponent } from './components/favoris/favoris.component';
 
+
+
+
+
+// @NgModule({
+//   declarations: [
+//     AppComponent,
+//     HeaderComponent,
+//     FooterComponent,
+//     ContainerComponent,
+//     ProductListComponent,
+//     ProductItemComponent,
+//     ModalProductViewComponent,
+//     SigninComponent,
+//     SignupComponent,
+//     ProductComponent,
+//     LoadingComponent,
+//     HomeSliderComponent,
+//     PaymentCardComponent,
+//     ProductDescriptionComponent,
+//     ProductAdditionalInfoComponent,
+//     ProductVendorComponent,
+//     ProductReviewsComponent,
+//     ProductDetailsComponent,
+//     ProductsContainerComponent,
+//     AsideNavComponent,
+//     PageTitleComponent,
+
+
+//   ],
+//   imports: [
+//     BrowserModule,
+//     AppRoutingModule,
+//     HttpClientModule,
+//     FormsModule,
+//     ReactiveFormsModule,
+//     RouterModule.forRoot(ROUTES),
+//     NgxPaginationModule,
+//     PanierComponent,
+//     CommonModule,
+//     MatSnackBarModule,
+
+
+// ],
+//   providers: [],
+//   bootstrap: [AppComponent]
+// })
+// export class AppModule { }
 
 
 @NgModule({
@@ -54,22 +105,23 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ProductsContainerComponent,
     AsideNavComponent,
     PageTitleComponent,
-
-
-
-
-
+     PanierComponent,
   ],
+
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule,        // ✅ indispensable pour ngModel
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
     NgxPaginationModule,
+    CommonModule,
+    MatSnackBarModule,
+    FavorisComponent,
 
-],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

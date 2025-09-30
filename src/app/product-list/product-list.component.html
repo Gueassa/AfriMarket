@@ -1,37 +1,53 @@
 
+<!-- barre de recherche -->
+<div class="search-bar" *ngIf="!isLoading">
+  <input
+    type="text"
+    placeholder="🔍 Rechercher un produit..."
+    [(ngModel)]="filter"
+    (input)="applyFilter()"
+  />
+</div>
+
 <div class="product-list" >
   <app-loading *ngIf="isloading"></app-loading>
 
 
-  <!-- <app-product-item  *ngFor="let product of products"
-  [product]="product" (deleteProductItem)="handleDeleteProduct($event)"
-  (handleDisplayProductViewModal)="handleDisplayProductViewModal($event)">
-  </app-product-item> -->
-
-
-
-
-<app-product-item
+<!-- <app-product-item
   *ngFor="let product of products | paginate: { itemsPerPage: pageSize, currentPage: page }"
+  [product]="product"
+  (quickView)="handleDisplayProductViewModal($event)">
+</app-product-item> -->
+
+<!-- mettre filteredProducts pour pour la barre de recherche -->
+<app-product-item
+  *ngFor="let product of filteredProducts | paginate: { itemsPerPage: pageSize, currentPage: page }"
   [product]="product"
   (quickView)="handleDisplayProductViewModal($event)">
 </app-product-item>
 
 
 
+  <!-- <div class="bar" *ngIf="!isloading && !products.length">Désoler aucun article n'est disponible pour le moment</div> -->
+<div class="bar" *ngIf="!isloading && !filteredProducts.length">
+  Désolé, aucun article ne correspond à votre recherche
+</div>
 
 
-
-
-  <div class="bar" *ngIf="!isloading && !products.length">Désoler aucun article n'est disponible pour le moment</div>
-
-
-  <pagination-controls
+  <!-- <pagination-controls
     *ngIf="products.length > pageSize"
     (pageChange)="page = $event"
     previousLabel="Précédent"
     nextLabel="Suivant">
-  </pagination-controls>
+  </pagination-controls> -->
+
+  <!-- barre de recherche -->
+<pagination-controls
+  *ngIf="filteredProducts.length > pageSize"
+  (pageChange)="page = $event"
+  previousLabel="Précédent"
+  nextLabel="Suivant">
+</pagination-controls>
 
 
   <app-modal-product-view *ngIf="isDisplayModal && modalProduct"

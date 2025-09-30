@@ -40,7 +40,7 @@
 <app-loading *ngIf="isloading"></app-loading>
 <div *ngIf="!isloading" class="single-product flex-1 gap-10 content ">
 
-  <!-- Bloc image -->
+  <!------------------------- Bloc image ------------------------------------------->
   <div class="single-product-image-current">
     <div class="single-product-image flex-1 gap-10 flex">
       <div class="single-product-image-list flex column gap-5">
@@ -54,10 +54,10 @@
       </div>
       <img class="current-image" [src]= "currentImage" [alt]="product?.name" width="390px" height="436px" >
     </div>
+ <app-loading *ngIf="isloading"></app-loading>
 
-                     <div>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 
-
+<!---------------------------detail des produits---------------------- -->
  <div class="single-product-details flex-1 gap-10   ">
     <h1>{{product?.name}}</h1>
     <div class="modul-product-view-details-price ">
@@ -76,8 +76,28 @@
     <div class="product-action-button  aic">
       <button class="btn">Pay now</button>
       <button class="product-action-button">
-    <span class="icon">🛒</span>
+
+<!-------------------------- option quantité ------------------------>
+<div class="quantity-selector">
+
+  <button class="btn"(click)="ajouterAuPanier()"> <img src="/assets/images/icons/Panier.png" alt="Panier" width="24" height="24" /></button>
+
+ <select [(ngModel)]="selectedQuantity" id="quantity" size="1">
+  <option *ngFor="let n of [1,2,3,4,5]" [value]="n">
+    {{ n }}
+  </option>
+</select>
+
+</div>
+
+<!-- ---------------------------------------------------------------------------- -->
+
+
+
+
+ <span class="icon">🛒</span>
     <span class="text">Add to Cart</span>
+
 </button>
       <app-payment-card></app-payment-card>
 
@@ -92,6 +112,36 @@
 </div>
 <app-product-details [product]="product"></app-product-details>
 
+<!-- Produits similaires (image + prix uniquement) -->
+
+<div class="similar-products" *ngIf="similarProducts.length > 0">
+  <h3 class="section-title">Produits similaires</h3>
+
+  <div class="similar-products-list">
+    <div
+      class="similar-product-card"
+      *ngFor="let product of similarProducts"
+
+    >
+      <!-- Image -->
+      <img
+        [src]="product.imageUrl[0]"
+        [alt]="product.name"
+        class="similar-product-img"
+        [routerLink]=" ['/product',product?.slug]"
+      />
+
+      <!-- Prix -->
+      <div class="similar-product-price">
+        {{ (product.sold_price || 0) / 100 | currency:'EUR' }}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- bouton favoris -->
 
 
 

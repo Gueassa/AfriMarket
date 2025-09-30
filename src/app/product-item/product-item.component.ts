@@ -1,6 +1,8 @@
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { Product } from '../models/product';
-
+import { FavorisService } from '../services/favoris.service';
+import { PanierService } from '../services/panier.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-item',
@@ -11,11 +13,23 @@ import { Product } from '../models/product';
 export class ProductItemComponent implements OnInit {
 
 
-  @Input() product: Product |undefined
-  @Output() deleteProductItem: EventEmitter<Product> = new EventEmitter<Product>()
-  @Output() handleDisplayProductViewModal = new EventEmitter<any>();
+
+@Input() product: Product |undefined
+@Output() deleteProductItem: EventEmitter<Product> = new EventEmitter<Product>()
+@Output() handleDisplayProductViewModal = new EventEmitter<any>();
 @Output() quickView = new EventEmitter<Product>();
 
+
+constructor(private panierService: PanierService,
+
+  private router: Router,
+   private favorisService: FavorisService,
+) {}
+
+
+
+
+isFavoris= false
 
 
   ngOnInit(): void {
@@ -46,23 +60,74 @@ this.quickView.emit(product);
 
 @Output() favoriteToggled = new EventEmitter<Product>();
 
-  isFavorite = false;
-
-
-
-
-
   toggleFavorite(product?: Product, event?: MouseEvent) {
   if (event) {
     event.stopPropagation(); // empêche le clic de remonter au parent
   }
   if (!product) return;
 
-  this.isFavorite = !this.isFavorite;
+  this.isFavoris = !this.isFavoris;
   this.favoriteToggled.emit(product);
-  console.log('Favori togglé pour', product.name, '=>', this.isFavorite);
+  console.log('Favori togglé pour', product.name, '=>', this.isFavoris);
 }
+
+
+
+
+
+
+
+
+
+ajouterAuPanier(product?: Product, event?: MouseEvent) {
+  if (event) event.stopPropagation();
+  if (!product) return;
+
+  this.panierService.ajouterProduit({ ...product, quantity: 1 });
+  alert(`${product.name} a été ajouté au panier !`);
+
+
 }
+
+// pour ajouter au favoris//
+
+ajouterAuxFavoris(product?: Product, event?: MouseEvent) {
+  if (event) event.stopPropagation(); // empêche le clic de remonter
+  if (!product) return;
+
+  this.favorisService.ajouterFavoris(product); // ajoute le produit aux favoris
+  alert(`${product.name} a été ajouté aux favoris !`);
+
+
+}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

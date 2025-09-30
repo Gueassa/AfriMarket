@@ -1,0 +1,112 @@
+<!--
+<div class="panier-container">
+  <h2>🛒 Mon panier</h2>
+</div>
+
+@if (products.length === 0) {
+  <div class="panier-vide">
+    Votre panier est vide.
+  </div>
+}
+
+@if (products.length > 0) {
+  <table class="panier-table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Nom</th>
+        <th>Prix normal</th>
+        <th>Prix vendu</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (produit of products; track $index) {
+        <tr>
+
+          <td>
+<img [src]=" produit ?  produit.imageUrl[1]: ''" height="60px" width="70px" [alt]="produit?.name">
+          </td>
+
+          <td>{{ produit.name }}</td>
+
+          <td>
+            <span class="old-price">{{ (produit.regular_price || 0) / 100 }} €</span>
+          </td>
+          <td>
+            <span class="new-price">{{ (produit.sold_price || 0) / 100 }} €</span>
+          </td>
+          <td class="button">
+            <button (click)="supprimerProduit($index)">Supprimer</button>
+            <button (click)="supprimerProduit($index)">Acheter</button>
+          </td>
+
+
+<tr *ngFor="let produit of products; let i = index">
+  <td>{{ produit.name }}</td>
+  <td>
+    <select [(ngModel)]="produit.quantity" (change)="updateTotal()">
+      <option *ngFor="let n of [1,2,3,4,5,6,7,8,9,10]" [value]="n">{{ n }}</option>
+    </select>
+  </td>
+</tr>
+
+
+      }
+    </tbody>
+  </table>
+
+
+<div class="panier-total">
+  <p><strong>Total : {{ getTotal() }} €</strong></p>
+
+  <button (click)="viderPanier()">Vider le panier</button>
+</div>
+} -->
+
+
+
+<div class="panier-container">
+  <h2>🛒 Mon panier</h2>
+
+<div *ngIf="products.length === 0">Votre panier est vide.</div>
+
+  <table *ngIf="products.length > 0" class="panier-table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Nom</th>
+        <th>Prix unitaire</th>
+        <th>Quantité</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produit of products; let i = index">
+        <td>
+          <img [src]="produit.imageUrl[1]" height="60" width="70" [alt]="produit.name" />
+        </td>
+        <td>{{ produit.name }}</td>
+        <td>{{ (produit.sold_price / 100) | number:'1.2-2' }} €</td>
+        <td>
+          <select [(ngModel)]="produit.quantity" (change)="updateTotal()">
+            <option *ngFor="let n of [1,2,3,4,5,6,7,8,9,10]" [value]="n">{{ n }}</option>
+          </select>
+        </td>
+        <td>{{ (produit.sold_price * produit.quantity / 100) | number:'1.2-2' }} €</td>
+        <td>
+          <button (click)="supprimerProduit(i)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="panier-total" *ngIf="products.length > 0">
+    <p>Total : {{ getTotal() }} €</p>
+    <button (click)="viderPanier()">Vider le panier</button>
+  </div>
+</div>
+
+
+

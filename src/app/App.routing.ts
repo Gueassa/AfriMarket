@@ -7,6 +7,8 @@ import { ProductDescriptionComponent } from "./components/product-tabs/product-d
 import { ProductAdditionalInfoComponent } from "./components/product-tabs/product-additional-info/product-additional-info.component";
 import { ProductVendorComponent } from "./components/product-tabs/product-vendor/product-vendor.component";
 import { ProductsContainerComponent } from "./components/products-container/products-container.component";
+import { PanierComponent } from "./components/panier/panier.component";
+import { FavorisComponent } from "./components/favoris/favoris.component";
 
 
 
@@ -81,21 +83,22 @@ component: ProductVendorComponent
   component: ProductsContainerComponent,
   pathMatch: 'full',
 
-
-
-
-
 },
 
 
 
 
+{
+    path:'panier',
+    component: PanierComponent,
+    pathMatch: 'full'
+  },
+
+  { path: 'product/:slug', component: ProductComponent },
 
 
 
-
-
-
+{ path: 'favoris', component: FavorisComponent },
 
 ];
 

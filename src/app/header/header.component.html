@@ -4,6 +4,10 @@
     <div class="logo">
      <img src="../assets/images/icons/logo vert.png " alt=""    height="58px" width="115px">
     </div>
+
+
+
+
 <div class="bars none" (click)="handleDisplayMobileNav()"> <a routerLink="#"><img src="../assets/images/icons/bars.png " alt=""> </a>   </div>
 
  <div class="nav-bar">
@@ -11,6 +15,10 @@
      <ul>
             <li class="navs_data" *ngFor="let item of navs_data"><a [routerLink]="item?.path">{{item?.name}}</a></li>
 
+<a [routerLink]="'/panier'" class="panier-icon"   >
+  <img src="/assets/images/icons/Panier.png" alt="Panier" />
+  <span class="panier-count">{{ totalProduits }}</span>
+</a>
             <li *ngFor="let item of auths_data"><a [routerLink]="item?.path" class="btn">{{item?.name}}</a></li>
 
      </ul>

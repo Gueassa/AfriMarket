@@ -67,4 +67,20 @@ header {
 
 
 
+/* badge panier icon compteur */
+.panier-icon {
+  position: relative;
+  display: inline-block;
+}
 
+.panier-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: orange;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}

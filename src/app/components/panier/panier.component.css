@@ -1,0 +1,132 @@
+/* Conteneur principal */
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+  color: #335139; /* couleur verte principale */
+}
+
+/* Message panier vide */
+.panier-vide {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  margin-top: 50px;
+  min-height: 57vh;
+}
+
+/* Table du panier */
+.panier-table {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* En-tête de table */
+.panier-table thead {
+  background-color: #335139; /* vert */
+  color: white;
+}
+
+.panier-table thead th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Lignes de table */
+.panier-table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s;
+}
+
+.panier-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Cellules */
+.panier-table td {
+  padding: 12px 15px;
+  color: #555;
+  vertical-align: middle;
+}
+
+/* Styles prix */
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+}
+
+.new-price {
+  font-weight: bold;
+  color: #f7941d; /* orange pour le prix vendu */
+}
+
+/* Boutons */
+button {
+  padding: 6px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:first-of-type {
+  background-color: #f7941d; /* orange pour supprimer */
+  color: #fff;
+}
+
+button:first-of-type:hover {
+  background-color: #d77a12; /* orange foncé */
+}
+
+button:last-of-type {
+  background-color: #335139; /* vert pour acheter */
+  color: #fff;
+}
+
+button:last-of-type:hover {
+  background-color: #273a2c; /* vert foncé */
+}
+
+/* Section total */
+.panier-total {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #335139; /* vert */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.panier-total button {
+  margin-left: 20px;
+  padding: 8px 16px;
+}
+main {
+  padding-top: 80px; /* adapte selon la hauteur de ton header */
+  min-height: calc(100vh - 80px);
+  background-color: #f5f5f5; /* optionnel, juste pour distinguer le contenu */
+}
+.panier-container {
+  margin-top: 10%; /* espace sous le header */
+  width: 100%;
+  font-family: sweet sans pro;
+}

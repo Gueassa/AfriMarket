@@ -1,7 +1,9 @@
 import { Category } from "../../assets/api/category";
 
 export interface Product {
-  id: any;
+  category: string;
+  quantity: number;
+  id: string;
   _id:string,
   slug?: string,
   name: string,
@@ -10,6 +12,7 @@ export interface Product {
   vendor_info?:string,
   reviews?:string,
   color:string[],
+  icon?:string,
   size?:string,
   stock?:string,
   categories: Category[],
