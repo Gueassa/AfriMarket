@@ -1,3 +1,15 @@
+.panier-container{
+min-height: 60vh;
+}
+
+
+.panier_vide{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
 /* Conteneur principal */
 h2 {
   text-align: center;
@@ -130,3 +142,12 @@ main {
   width: 100%;
   font-family: sweet sans pro;
 }
+
+@media  screen and  (max-width: 990px) {
+.panier-container{
+margin-top: 57%;
+}
+
+
+}
+
