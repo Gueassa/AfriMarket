@@ -87,6 +87,18 @@ display: flex;
   .footer-list {
     text-align: center;
   }
+
+
+  .widget-card {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  }
+
+
+
+
+
 }
 
 

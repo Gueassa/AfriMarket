@@ -14,6 +14,9 @@ import { Items } from '../models/item';
 
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+
+  close: any;
+
 data:Number | undefined
 second:Number|undefined
 secondSub: Subscription| undefined
@@ -71,6 +74,13 @@ nombreProduits: number = 0;//produit Quantité
 
    )
    }
+
+
+toggleMenu() {
+  this.isDisplayMobileNav = !this.isDisplayMobileNav;
+}
+
+
 
 
 

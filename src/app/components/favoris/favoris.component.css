@@ -1,8 +1,14 @@
 /* ======= Conteneur page ======= */
 .favoris-page {
+  min-height: 40vh;
   margin: 12% 5%;       /* marge en haut et bas, 5% à gauche et droite */
+ margin-top: 10%;
 }
-
+.empty-message{
+justify-content: center;
+align-items: center;
+display: flex;
+}
 /* ======= Titre ======= */
 h2 {
   justify-content: center;
@@ -106,12 +112,6 @@ font-family: sweet sans pro;
 }
 
 
-
-
-
-
-
-
 .toast {
   visibility: hidden;
   min-width: 200px;
@@ -134,4 +134,12 @@ font-family: sweet sans pro;
 .toast.show {
   visibility: visible;
   opacity: 1;
+}
+
+
+@media screen  and (max-width:900px ){
+.favoris-page {
+   margin-top: 30%;
+}
+
 }

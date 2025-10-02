@@ -91,6 +91,12 @@ display: flex;
   box-shadow: 0 4px 10px rgba(240, 127, 26, 0.5);
 }
 
+img{
+
+margin-left: 20px;
+margin-bottom: 8px;
+}
+
 /* Animation */
 @keyframes slideIn {
   from {

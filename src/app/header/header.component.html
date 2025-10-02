@@ -8,7 +8,18 @@
 
 
 
-<div class="bars none" (click)="handleDisplayMobileNav()"> <a routerLink="#"><img src="../assets/images/icons/bars.png " alt=""> </a>   </div>
+<!-- <div class="bars none" (click)="handleDisplayMobileNav()"> <a routerLink="#"><img src="../assets/images/icons/bars.png " alt=""> </a>   </div>
+
+
+<div class="menu-icon" *ngIf="isDisplayMobileNav" (click)="handleCloseMobileNav()">
+    <img src="assets/images/icons/close.png" alt="Close" />
+  </div> -->
+
+<div class="bars  none" (click)="toggleMenu()">
+  <img *ngIf="!isDisplayMobileNav" src="assets/images/icons/bars.png" alt="Menu" />
+  <img *ngIf="isDisplayMobileNav" src="assets/images/icons/close.png" alt="Close" height="27px" width="18px" />
+</div>
+
 
  <div class="nav-bar">
 

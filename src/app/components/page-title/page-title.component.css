@@ -14,10 +14,11 @@ font-family: sweet sans pro;
 background-color: #ccc;
 align-items: center;
 justify-content: center;
-min-height: 10vh;
+min-height: 15vh;
 display: flex;
-margin-top: 25%;
+text-align: center;
 font-family: sweet sans pro;
+padding-top: 40px;
 }
 
 

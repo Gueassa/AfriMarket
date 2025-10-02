@@ -1,5 +1,5 @@
 .panier-container{
-min-height: 60vh;
+min-height: 66vh;
 }
 
 
@@ -23,7 +23,7 @@ h2 {
   text-align: center;
   font-size: 1.2rem;
   color: #777;
-  margin-top: 50px;
+  margin-top: 30px;
   min-height: 57vh;
 }
 
@@ -145,9 +145,37 @@ main {
 
 @media  screen and  (max-width: 990px) {
 .panier-container{
-margin-top: 57%;
+margin-top: 30%;
 }
 
+  .panier-table {
+    margin-left: 10px;  /* marge gauche */
+    margin-right: 10px; /* marge droite */
+    width: calc(100% - 20px); /* réduit la largeur totale pour tenir compte des marges */
+text-align: center;
 
+
+  }
+
+  .panier-table th,
+  .panier-table td {
+    font-size: 9px;    /* texte plus petit */
+    padding: 1px;       /* padding réduit */
+  }
+
+  .panier-table img {
+    width: 60px;
+    height: auto;
+  }
+
+  .panier-table select {
+    width: 30px;        /* largeur du select adaptée */
+    font-size: 12px;
+    padding: 2px;
+  }
+
+  .panier-table button {
+    font-size: 8px;
+    padding: 3px 5px;
+  }
 }
-

@@ -1,9 +1,11 @@
 
+
 .product-container {
   min-height: calc(100vh - 100px); /* 100px = hauteur approximative de ton header */
   display: flex;
   gap: 10px;
   margin-bottom: 8%;
+
 }
 
 
@@ -26,6 +28,7 @@ border-radius: 10px;
 text-decoration: none;
 cursor: pointer;
 color: rgb(50, 50, 50);
+font-family: sweet sans pro;
 }
 
 .product-container ul li a.active{
@@ -75,6 +78,7 @@ color:white ;
 .products-list{
 display: none;
 
+
 }
 
 .products-category ul li a {
@@ -84,6 +88,7 @@ display: none;
     line-height: 35px;
     font-size: 14px;         /* texte réduit */
     padding: 0 8px;          /* moins de padding */
+    font-family: sweet sans pro;
   }
 
 
@@ -119,6 +124,7 @@ display: none;
   display: block;
   padding: 5px 0;
   color: #333;
+
 }
 
 .products-list {

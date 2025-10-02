@@ -9,6 +9,9 @@ import { Items } from '../../models/item';
   styleUrl: './aside-nav.component.css'
 })
 export class AsideNavComponent implements OnInit {
+
+
+
 navs_data: Items[] = nav_items
 auths_data: Items[] = auth_items
 @Output() close: EventEmitter<string> = new EventEmitter<string> ()
